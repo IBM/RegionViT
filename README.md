@@ -4,6 +4,16 @@ This repository is the official implementation of RegionViT: Regional-to-Local A
 
 We provided the codes for [Image Classification](#image-classification) and [Object Detection](#object-detection).
 
+If you use the codes and models from this repo, please cite our work. Thanks!
+
+@inproceedings{
+    chen2021regionvit,
+    title={{RegionViT: Regional-to-Local Attention for Vision Transformers}},
+    author={Chun-Fu (Richard) Chen and Rameswar Panda and Quanfu Fan},
+    booktitle={ArXiv},
+    year={2021}
+}
+
 ## Image Classification
 
 ### Installation
