@@ -1,0 +1,9 @@
+_BASE_: "mask_rcnn_regionvit_FPN_1x.yaml"
+
+INPUT:
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800, 832, 864, 896)
+  AUG_MODE: "DETR"
+
+SOLVER:
+  MAX_ITER: 270000
+  STEPS: (210000, 250000)

@@ -1,0 +1,6 @@
+_BASE_: "retinanet_regionvit_FPN_3x.yaml"
+
+INPUT:
+  MAX_SIZE_TRAIN: 1344
+  MIN_SIZE_TEST: 896
+  MAX_SIZE_TEST: 1344

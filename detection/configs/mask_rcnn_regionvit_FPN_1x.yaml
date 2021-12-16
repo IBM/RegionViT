@@ -1,0 +1,24 @@
+_BASE_: "Base-RCNN-FPN.yaml"
+MODEL:
+  BACKBONE:
+    NAME: "build_regionvit_fpn_backbone"
+    REGIONVIT: "regionvit_small_224"
+    FREEZE_AT: 0
+    DP_RATE: 0.2
+    DET_NORM: True
+  MASK_ON: True
+  PIXEL_MEAN: [103.53, 116.28, 123.675]
+  PIXEL_STD: [57.375, 57.120, 58.395] 
+
+INPUT:
+  MAX_SIZE_TRAIN: 1120
+  MIN_SIZE_TRAIN: (672,)
+  FORMAT: "RGB"
+  AUG_MODE: "FIXED"
+  MIN_SIZE_TEST: 672
+  MAX_SIZE_TEST: 1120
+
+SOLVER:
+  OPTIMIZER: "ADAMW"
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 0.05
