@@ -6,6 +6,7 @@ We provided the codes for [Image Classification](#image-classification) and [Obj
 
 If you use the codes and models from this repo, please cite our work. Thanks!
 
+```
 @inproceedings{
     chen2021regionvit,
     title={{RegionViT: Regional-to-Local Attention for Vision Transformers}},
@@ -13,6 +14,7 @@ If you use the codes and models from this repo, please cite our work. Thanks!
     booktitle={ArXiv},
     year={2021}
 }
+```
 
 ## Image Classification
 
@@ -45,14 +47,14 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
 
 ### Model Zoo
 
-We provide models pretrained on ImageNet1K.
+We provide models trained on ImageNet1K.
 
 | name | acc@1 | acc@5 | #params | url |
 | --- | --- | --- | --- | --- |
-| RegionViT-tiny | 72.2 | 91.1 | 5M | [model](https://dl.fbaipublicfiles.com/deit/deit_tiny_patch16_224-a1311bcf.pth) |
-| RegionViT-small | 79.9 | 95.0 | 22M| [model](https://dl.fbaipublicfiles.com/deit/deit_small_patch16_224-cd65a155.pth) |
-| RegionViT-medium | 81.8 | 95.6 | 86M | [model](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth) |
-| RegionViT-base | 74.5 | 91.9 | 6M | [model](https://dl.fbaipublicfiles.com/deit/deit_tiny_distilled_patch16_224-b40b3cf7.pth) |
+| RegionViT-tiny | 72.2 | 91.1 | 5M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-Ti.pth) |
+| RegionViT-small | 79.9 | 95.0 | 22M| [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
+| RegionViT-medium | 81.8 | 95.6 | 86M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
+| RegionViT-base | 74.5 | 91.9 | 6M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-B.pth) |
 
 
 ### Training
@@ -120,5 +122,9 @@ python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py --model 
 
 Model names of other models are `regionvit_tiny_224`, `regionvit_medium_224` and `regionvit_base_224`.
 
+### Model Zoo
 
+We provide models trained on MS COCO with MaskRCNN and RetinaNet.
+
+To be uploaded.
 
