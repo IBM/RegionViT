@@ -47,14 +47,14 @@ The directory structure is the standard layout for the torchvision [`datasets.Im
 
 ### Model Zoo
 
-We provide models trained on ImageNet1K.
+We provide models trained on ImageNet1K. Models can be found [here](https://github.com/IBM/RegionViT/releases/tag/weights-v0.1).
 
-| name | acc@1 | acc@5 | #params | url |
+| Name | Acc@1 | #FLOPs | #Params | URL |
 | --- | --- | --- | --- | --- |
-| RegionViT-tiny | 72.2 | 91.1 | 5M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-Ti.pth) |
-| RegionViT-small | 79.9 | 95.0 | 22M| [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
-| RegionViT-medium | 81.8 | 95.6 | 86M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
-| RegionViT-base | 74.5 | 91.9 | 6M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-B.pth) |
+| RegionViT-Ti | 80.4 | 2.4 | 13.8M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-Ti.pth) |
+| RegionViT-S | 82.6 | 5.3 | 30.6M| [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
+| RegionViT-M | 83.1 | 7.4 | 41.2M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
+| RegionViT-B | 83.2 | 13.0 | 72.7M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-B.pth) |
 
 
 ### Training
@@ -124,7 +124,30 @@ Model names of other models are `regionvit_tiny_224`, `regionvit_medium_224` and
 
 ### Model Zoo
 
-We provide models trained on MS COCO with MaskRCNN and RetinaNet.
+We provide models trained on MS COCO with MaskRCNN and RetinaNet. Models can be found [here](https://github.com/IBM/RegionViT/releases/tag/weights-v0.1).
 
-To be uploaded.
+#### MaskRCNN
+
+| Name | #Params (M) | #FLOPs (G) | box mAP (1x) | mask mAP (1x) | box mAP (3x) | mask mAP (3x) | url |
+| --- | --- | --- | --- | --- | ---| --- | --- |
+| RegionViT-S  | 50.1 | 171.3 | 42.5 | 39.5 | 46.3 | 42.3 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-S.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-S.pth) |
+| RegionViT-S+ | 50.9 | 182.9 | 43.5 | 40.4 | 47.3 | 43.4 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-S+.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-S+.pth) |
+| RegionViT-S+ (w/ PEG) | 50.9 | 183.0 | 44.2 | 40.8 | 47.6 | 43.4 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-S+peg.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-S+peg.pth) |
+| RegionViT-B  | 92.2 | 287.9 | 43.5 | 40.1 | 47.2 | 43.0 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-B.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-B.pth) |
+| RegionViT-B+ | 93.2 | 307.1 | 44.5 | 41.0 | 48.1 | 43.5 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-B+.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-B+.pth) |
+| RegionViT-B+ (w/ PEG) | 93.2 | 307.2 | 45.4 | 41.6 | 48.3 | 43.5 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-B+peg.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-B+peg.pth) |
+| RegionViT-B+ (w/ PEG) dagger | 93.2 | 464.4 | 46.3 | 42.4 | 49.2 | 44.5 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_1x_RegionViT-B+peg_dagger.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/MaskRCNN_3x_RegionViT-B+peg_dagger.pth) |
+
+
+#### RetinaNet
+
+| Name | #Params (M) | #FLOPs (G) | box mAP (1x) | box mAP (3x) | url |
+| --- | --- | --- | --- | --- | ---| 
+| RegionViT-S  | 40.8 | 192.6 | 42.2 | 45.8  | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-S.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-S.pth) |
+| RegionViT-S+ | 41.5 | 204.2 | 43.1 | 46.9 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-S+.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-S+.pth) |
+| RegionViT-S+ (w/ PEG) | 41.6 | 204.3 | 43.9 | 46.7  | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-S+peg.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-S+peg.pth) |
+| RegionViT-B  | 83.4 | 308.9 | 43.3 | 46.1 | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-B.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-B.pth) |
+| RegionViT-B+ | 84.4 | 328.1 | 44.2 | 46.9| [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-B+.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-B+.pth) |
+| RegionViT-B+ (w/ PEG) | 84.5 | 328.2 | 44.6 | 46.9  | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-B+peg.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-B+peg.pth) |
+| RegionViT-B+ (w/ PEG) dagger | 84.5 | 506.4 | 46.1 | 48.2  | [1x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_1x_RegionViT-B+peg_dagger.pth) <br /> [3x model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RetinaNet_3x_RegionViT-B+peg_dagger.pth) |
 
