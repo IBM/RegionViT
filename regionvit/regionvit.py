@@ -453,19 +453,6 @@ _model_cfg = {
         'kernel_sizes': [7, 7, 7, 7],  # 8x8, 4x4, 2x2, 1x1,
         'downsampling': ['c', 'sc', 'sc', 'sc'],
     },
-
-    ### for detection, with larger window size
-    'tiny_w14': {
-        'img_size': 224,
-        'patch_conv_type': '3conv',
-        'patch_size': 4,
-        'embed_dim': [64, 64, 128, 256, 512],
-        'num_heads': [2, 4, 8, 16],
-        'mlp_ratio': 4.,
-        'depth': [2, 2, 8, 2],
-        'kernel_sizes': [14, 14, 14, 14],  # 8x8, 4x4, 2x2, 1x1,
-        'downsampling': ['c', 'sc', 'sc', 'sc'],
-    },    
     'small_w14': {
         'img_size': 224,
         'patch_conv_type': '3conv',
@@ -477,6 +464,18 @@ _model_cfg = {
         'kernel_sizes': [14, 14, 14, 14],  # 8x8, 4x4, 2x2, 1x1,
         'downsampling': ['c', 'sc', 'sc', 'sc'],
     },
+    'small_w14_peg': {
+        'img_size': 224,
+        'patch_conv_type': '3conv',
+        'patch_size': 4,
+        'embed_dim': [96, 96, 192, 384, 768],
+        'num_heads': [3, 6, 12, 24],
+        'mlp_ratio': 4.,
+        'depth': [2, 2, 8, 2],
+        'kernel_sizes': [14, 14, 14, 14],  # 8x8, 4x4, 2x2, 1x1,
+        'downsampling': ['c', 'sc', 'sc', 'sc'],
+        'peg': True
+    },
     'base_w14': {
         'img_size': 224,
         'patch_conv_type': '1conv',
@@ -487,6 +486,18 @@ _model_cfg = {
         'depth': [2, 2, 14, 2],
         'kernel_sizes': [14, 14, 14, 14],  # 8x8, 4x4, 2x2, 1x1,
         'downsampling': ['c', 'sc', 'sc', 'sc'],
+    },
+    'base_w14_peg': {
+        'img_size': 224,
+        'patch_conv_type': '1conv',
+        'patch_size': 4,
+        'embed_dim': [128, 128, 256, 512, 1024],
+        'num_heads': [4, 8, 16, 32],
+        'mlp_ratio': 4.,
+        'depth': [2, 2, 14, 2],
+        'kernel_sizes': [14, 14, 14, 14],  # 8x8, 4x4, 2x2, 1x1,
+        'downsampling': ['c', 'sc', 'sc', 'sc'],
+        'peg': True
     },
 
 }
@@ -526,6 +537,14 @@ def regionvit_small_w14_224(pretrained=False, **kwargs):
 
 
 @register_model
+def regionvit_small_w14_peg_224(pretrained=False, **kwargs):
+    model_cfg = _model_cfg['small_w14_peg']
+    model = RegionViT(**model_cfg, **kwargs)
+    model.default_cfg = _cfg()
+    return model
+
+
+@register_model
 def regionvit_medium_224(pretrained=False, **kwargs):
     model_cfg = _model_cfg['medium']
     model = RegionViT(**model_cfg, **kwargs)
@@ -548,3 +567,10 @@ def regionvit_base_w14_224(pretrained=False, **kwargs):
     model.default_cfg = _cfg()
     return model
 
+
+@register_model
+def regionvit_base_w14_peg_224(pretrained=False, **kwargs):
+    model_cfg = _model_cfg['base_w14_peg']
+    model = RegionViT(**model_cfg, **kwargs)
+    model.default_cfg = _cfg()
+    return model

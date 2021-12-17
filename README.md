@@ -120,7 +120,7 @@ Then, to train RegionViT-S on MS COCO with 1x schedule:
 python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py --model regionvit_small_224 --batch-size 256 --data-path /path/to/imagenet
 ```
 
-Model names of other models are `regionvit_tiny_224`, `regionvit_medium_224` and `regionvit_base_224`.
+Model names of other models are `regionvit_base_224`, `regionvit_small_w14_224`, etc. Supported models can be found [here](./regionvit/regionvit.py)
 
 ### Model Zoo
 
