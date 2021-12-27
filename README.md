@@ -113,11 +113,11 @@ Before training, you will need to convert the pretrained model into Detectron2 f
 python3 tools/convert_cls_model_to_d2.py --model /path/to/pretrained/model --ows 7 --nws 7
 ```
 
-Then, to train RegionViT-S on MS COCO with 1x schedule:
+Then, to train RetinaNet RegionViT-S on MS COCO with 1x schedule:
 
 ```shell script
 
-python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py --model regionvit_small_224 --batch-size 256 --data-path /path/to/imagenet
+python main_detection.py --num-gpus 8 --resume --config-file detection/configs/retinanet_regionvit_FPN_1x.yaml MODEL.BACKBONE.REGIONVIT regionvit_small_224 MODEL.WEIGHTS /path/to/pretrained_model OUTPUT_DIR /path/to/log_folder
 ```
 
 Model names of other models are `regionvit_base_224`, `regionvit_small_w14_224`, etc. Supported models can be found [here](./regionvit/regionvit.py)
