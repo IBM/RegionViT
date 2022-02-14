@@ -53,7 +53,7 @@ We provide models trained on ImageNet1K. Models can be found [here](https://gith
 | --- | --- | --- | --- | --- |
 | RegionViT-Ti | 80.4 | 2.4 | 13.8M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-Ti.pth) |
 | RegionViT-S | 82.6 | 5.3 | 30.6M| [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
-| RegionViT-M | 83.1 | 7.4 | 41.2M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-S.pth) |
+| RegionViT-M | 83.1 | 7.4 | 41.2M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-M.pth) |
 | RegionViT-B | 83.2 | 13.0 | 72.7M | [model](https://github.com/IBM/RegionViT/releases/download/weights-v0.1/RegionViT-B.pth) |
 
 
